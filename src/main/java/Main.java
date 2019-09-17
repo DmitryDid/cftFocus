@@ -8,13 +8,13 @@ public class Main {
     public static void main(String[] args) {
         HashMap<String, String> parameters = null;
         try {
-            parameters = Data.getParameters(args);
+            parameters = DataHandler.getParameters(args);
         } catch (ParameterNotFoundException e) {
             System.out.println(e.getMessage());
         }
         try {
-            ArrayList sortResult = Data.sort(parameters);
-            Data.writeDataToFile(sortResult, parameters.get("out"));
+            ArrayList sortResult = DataHandler.sort(parameters);
+            DataHandler.writeDataToFile(sortResult, parameters.get("out"));
         } catch (IOException e) {
             if (e instanceof FileNotFoundException) {
                 System.err.println("Не найден файл по переданному пути.");

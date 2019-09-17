@@ -17,7 +17,7 @@ class SortTest {
     }
 
     @Test
-    void stringSort1() {
+    void stringSort() {
         ArrayList<String> list1 = new ArrayList<>(Arrays.asList("a", "aa", "aaa", "aaab", "aaabb", "aaabbb"));
         ArrayList<String> list2 = new ArrayList<>(Arrays.asList("b", "bb", "bbb", "bbbc", "bbbcc", "bbbccc"));
         ArrayList<String> expected = new ArrayList<>(Arrays.asList("a", "aa", "aaa", "aaab", "aaabb", "aaabbb",

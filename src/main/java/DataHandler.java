@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-class Data {
+class DataHandler {
 
     static ArrayList<String> readDataFromFile(String path) throws IOException {
         if (path == null) return null;
@@ -74,14 +74,14 @@ class Data {
     static ArrayList sort(HashMap<String, String> parameters) throws IOException {
         ArrayList<String> temporary;
         ArrayList<String> result;
-        ArrayList<String> list1 = Data.readDataFromFile(parameters.get("in1"));
-        ArrayList<String> list2 = Data.readDataFromFile(parameters.get("in2"));
-        ArrayList<String> list3 = Data.readDataFromFile(parameters.get("in3"));
+        ArrayList<String> list1 = DataHandler.readDataFromFile(parameters.get("in1"));
+        ArrayList<String> list2 = DataHandler.readDataFromFile(parameters.get("in2"));
+        ArrayList<String> list3 = DataHandler.readDataFromFile(parameters.get("in3"));
 
         if (parameters.get("type").equals("-i")) {
-            Data.separateData(list1);
-            if (list2 != null) Data.separateData(list2);
-            if (list3 != null) Data.separateData(list3);
+            DataHandler.separateData(list1);
+            if (list2 != null) DataHandler.separateData(list2);
+            if (list3 != null) DataHandler.separateData(list3);
             temporary = Sort.integerSort(list1, list2);
             result = Sort.integerSort(list3, temporary);
         } else {
